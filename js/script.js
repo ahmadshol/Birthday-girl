@@ -231,11 +231,15 @@ if (floatingBg){
 const letterMessage =
 `Sayanggkuu,
 
-Selamatt ulang tahun yaa, sayanggkuu. Jujur, aku kadang kehabisan kata-kata buat bilang betapa bersyukurnya aku selama ada kamu di hidupku, tapi aku tetap mau coba nyampein ini.
+Selamatt ulang tahun yaa, sayanggkuu. Jujur, aku merasa bersalah kalau aku masih sering slowrespon, tapi aku tetap mau coba nyampein ini.
 
-Ada kamu tuh bikin hari-hari yang tadinya biasa aja jadi kerasa spesial banget. Senyummu, ketawamu, sampai caramu perhatian ke orang sekitar—itu semua bikin aku makin sayang tiap harinya.
+Ada kamu tuh bikin hari-hari yang tadinya biasa aja jadi kerasa spesial banget. Senyummu, ketawamu, sampai caramu perhatian ke aku itu semua bikin aku makin sayang tiap harinya.
 
 Semoga di umur yang baru ini, semua hal yang kamu impikan bisa tercapai, yaaa. Aku janji bakal selalu ada di sampingmu, nemenin kamu di setiap langkah, baik di momen-momen seru maupun di hari-hari yang tenang.
+
+Pesenku kamu jangan pernah punya pikiran buat ninggalin aku yaa semisal ada yang salah dari aku tetep tegur aku yaa jangan malah diemm :(
+
+Sama satu lagi kurang2 in teledornya yaaa xixixi
 
 Makasihh ya udah jadi diri kamu sendiri yang luar biasa. Aku sayang banget sama kamu.
 
