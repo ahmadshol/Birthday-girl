@@ -44,7 +44,7 @@ document.addEventListener('keydown', (e) => {
 const reasonsBox = document.getElementById('reasonsBox');
 
 if (reasonsBox){
-  const scrollSpeed = 0.35; // px per frame — kecil = pelan
+  const scrollSpeed = 0.40; // px per frame — kecil = pelan
   let isPaused = false;
   let resumeTimeout = null;
   let loopScheduled = false;

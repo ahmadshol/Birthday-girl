@@ -11,15 +11,15 @@ const photos = [
   },
   {
     src: "photos/photo2.jpg",
-    caption: "I hope that on this special day, you are surrounded by happiness and love."
+    caption: "Aku harap di hari spesial ini, Rasa sayang kamu ke aku ga berkurang sedikit pun."
   },
   {
     src: "photos/photo3.jpg",
-    caption: "Every laugh, every hug, every little moment with you means the world to me."
+    caption: "Tiap Momen momen kecil bersamamu akan selalu abadi di ingatanku."
   },
   {
     src: "photos/photo4.jpg",
-    caption: "Here's to many more birthdays, adventures, and memories together, my love."
+    caption: "Tetep sayang aku yaa, dan semoga semua impian kamu akan tercapai tenang aku akan temenin setiap prosesmu sayangg."
   }
 ];
 

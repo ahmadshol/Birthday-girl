@@ -149,39 +149,47 @@ function setMusicUI(isPlaying){
 function saveMusicState(){
   sessionStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify({
     playing: !bgMusic.paused,
-    time: bgMusic.currentTime || 0
+    time: bgMusic.currentTime || 0,
+    pausedByUser: musicPausedByUser
   }));
 }
 
 const savedMusicState = JSON.parse(sessionStorage.getItem(MUSIC_STORAGE_KEY) || 'null');
+let musicPausedByUser = savedMusicState?.pausedByUser === true;
 
-function resumeMusic(){
-  if (!savedMusicState || !savedMusicState.playing) return;
-  bgMusic.currentTime = savedMusicState.time || 0;
+function startMusic(time){
+  if (typeof time === 'number' && bgMusic.readyState >= 1){
+    bgMusic.currentTime = time;
+  }
   bgMusic.play().then(() => {
     setMusicUI(true);
+    saveMusicState();
   }).catch(() => {
     setMusicUI(false);
+    saveMusicState();
   });
 }
 
-if (savedMusicState){
+if (savedMusicState?.playing){
   if (bgMusic.readyState >= 1){
-    resumeMusic();
+    startMusic(savedMusicState.time || 0);
   } else {
-    bgMusic.addEventListener('loadedmetadata', resumeMusic, { once: true });
+    bgMusic.addEventListener('loadedmetadata', () => startMusic(savedMusicState.time || 0), { once: true });
   }
+} else if (!musicPausedByUser){
+  startMusic();
 }
 
 musicBtn.addEventListener('click', () => {
   if (bgMusic.paused){
-    bgMusic.play().catch(() => {});
-    setMusicUI(true);
+    musicPausedByUser = false;
+    startMusic();
   } else {
+    musicPausedByUser = true;
     bgMusic.pause();
     setMusicUI(false);
+    saveMusicState();
   }
-  saveMusicState();
 });
 
 bgMusic.addEventListener('timeupdate', () => {
@@ -221,17 +229,17 @@ if (floatingBg){
    paragraf baru.
 ================================================================= */
 const letterMessage =
-`My love,
+`Sayanggkuu,
 
-Happy birthday to the most wonderful person I know. I don't think words can fully capture how grateful I am to have you in my life, but I'm going to try anyway.
+Selamatt ulang tahun yaa, sayanggkuu. Jujur, aku kadang kehabisan kata-kata buat bilang betapa bersyukurnya aku selama ada kamu di hidupku, tapi aku tetap mau coba nyampein ini.
 
-You make every ordinary day feel special just by being in it. Your smile, your laugh, the way you care about everyone around you... it all makes me fall for you more every single day.
+Ada kamu tuh bikin hari-hari yang tadinya biasa aja jadi kerasa spesial banget. Senyummu, ketawamu, sampai caramu perhatian ke orang sekitar—itu semua bikin aku makin sayang tiap harinya.
 
-I hope this year brings you every single thing you've been hoping for, and so much more. I promise to be right beside you for all of it — the big moments and the tiny, quiet ones too.
+Semoga di umur yang baru ini, semua hal yang kamu impikan bisa tercapai, yaaa. Aku janji bakal selalu ada di sampingmu, nemenin kamu di setiap langkah, baik di momen-momen seru maupun di hari-hari yang tenang.
 
-Thank you for being exactly who you are. I love you more than words can say.
+Makasihh ya udah jadi diri kamu sendiri yang luar biasa. Aku sayang banget sama kamu.
 
-Happy birthday, my girl. Here's to you. 🎂`;
+Happy birthday, my girl. Ini Buat Kamuu. 🎂`;
 
 const letterEl = document.getElementById('letter-text');
 let typeIndex = 0;
